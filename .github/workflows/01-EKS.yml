@@ -6,7 +6,7 @@ on:
 
 jobs:
   Plan:
-    uses: .github/workflows/aws_tf_plan.yml@main
+    uses: prem1903/eksterraform/.github/workflows/aws_tf_plan.yml@main
     with:
       gh_environment: main
     secrets:
@@ -14,7 +14,7 @@ jobs:
 
   Apply:
     needs: Plan
-    uses: .github/workflows/aws_tf_appy.yml@main
+    uses: prem1903/eksterraform/.github/workflows/aws_tf_appy.yml@main
     with:
       gh_environment: main
     secrets:
