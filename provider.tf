@@ -19,11 +19,10 @@ terraform {
     bucket         	   = "premeks"
     key              	   = "state/terraform.tfstate"
     region         	   = "us-west-2"
-    encrypt        	   = true
-    dynamodb_table = "rakeks_tf_lockid"
   }
+
+}
+
 provider "aws" {
   region = "us-west-2"
 }
-}
-
