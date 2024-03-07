@@ -19,7 +19,7 @@ backend "remote" {
                 hostname = "app.terraform.io"
                 organization = "TerraformLearnings"
                 workspaces {
-                        name = "AWSEKS"
+                        name = "AWSEKS01"
 		}
 	}
 }
