@@ -16,7 +16,7 @@ locals {
 }
 
 module "vpc" {
-  source  = "terraform-aws-modules/vpc/aws"
+  source  = "modules/vpc"
   version = "5.0.0"
 
   name = "education-vpc"
@@ -43,7 +43,7 @@ module "vpc" {
 }
 
 module "eks" {
-  source  = "terraform-aws-modules/eks/aws"
+  source  = "modules/eks"
   version = "19.15.3"
 
   cluster_name    = local.cluster_name
