@@ -1,4 +1,5 @@
 terraform {
+
   required_providers {
     aws = {
       source  = "hashicorp/aws"
@@ -13,13 +14,13 @@ terraform {
       version = ">= 2.0.1"
     }
   }
+
+backend "remote" {
+                hostname = "app.terraform.io"
+                organization = "TerraformLearnings"
+                workspaces {
+                        name = "AWSEKS"
+		}
+	}
 }
 
-provider "aws" {
-  region = "us-west-2"
-}
-
-resource "random_string" "suffix" {
-  length  = 5
-  special = false
-}
