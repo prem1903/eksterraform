@@ -17,12 +17,15 @@ terraform {
 
   backend "s3" {
     bucket         	   = "premeks"
-    key              	   = "state/terraform.tfstate"
+    key              	 = "state/terraform.tfstate"
     region         	   = "us-west-2"
+    dynamodb_table  = "eksstatefile"
   }
 
 }
 
 provider "aws" {
-  region = "us-west-2"
+  region = var.region
+  access_key = var.access_key
+  secret_key = var.secret_key
 }
