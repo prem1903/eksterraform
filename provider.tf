@@ -19,7 +19,7 @@ terraform {
     bucket         	   = "premeks"
     key              	 = "state/terraform.tfstate"
     region         	   = "us-west-2"
-    dynamodb_table  = "eksstatefile"
+    dynamodb_table  = "AWS_EKS_statefile"
   }
 
 }
