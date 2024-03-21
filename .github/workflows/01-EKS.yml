@@ -9,13 +9,11 @@ jobs:
     uses: prem1903/eksterraform/.github/workflows/aws_tf_plan.yml@main
     with:
       gh_environment: main
-    secrets:
-      terraform plan -var access_key="${{ secrets.AWS_ACCESS_KEY_ID }}" -var secret_key="${{ secrets.AWS_SECRET_ACCESS_KEY }}"
+    secrets: inherit
 
   Apply:
     needs: Plan
     uses: prem1903/eksterraform/.github/workflows/aws_tf_appy.yml@main
     with:
       gh_environment: main
-    secrets:
-      terraform apply -var access_key="${{ secrets.AWS_ACCESS_KEY_ID }}" -var secret_key="${{ secrets.AWS_SECRET_ACCESS_KEY }}" --auto-approve
+    secrets: inherit
